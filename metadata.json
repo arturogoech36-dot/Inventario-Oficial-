@@ -1,0 +1,6 @@
+{
+  "name": "Inventario Bodega Tránsito HAH",
+  "description": "Sistema de gestión de inventario y trazabilidad para Bodega de Tránsito - Hospital Alto Hospicio (HAH-CGI5).",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

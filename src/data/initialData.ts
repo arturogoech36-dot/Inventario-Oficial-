@@ -1,0 +1,227 @@
+import { Producto, KardexMovimiento, ActaSalida, FamiliaCatalogo } from '../types';
+
+export const INITIAL_FAMILIAS: FamiliaCatalogo[] = [
+  {
+    id: 'ALI',
+    nombre: 'Alimentación',
+    descripcion: 'Descartables, envases y vajilla de alimentación (ALI-01 al ALI-21)',
+    esFija: true,
+    color: 'cyan',
+  },
+  {
+    id: 'GOB',
+    nombre: 'Gineco-Obstetricia',
+    descripcion: 'Kits y equipamiento neonatal de Gineco-Obstetricia y bienestar de apego (GOB-22 y GOB-23)',
+    esFija: true,
+    color: 'purple',
+  },
+  {
+    id: 'EQM',
+    nombre: 'Equipos Médicos',
+    descripcion: 'Equipos médicos, instrumental clínico y soluciones (EQM-24 al EQM-27)',
+    esFija: true,
+    color: 'blue',
+  },
+  {
+    id: 'BOT',
+    nombre: 'Producto en Tránsito',
+    descripcion: 'Insumos y mercadería en tránsito de bodega (BOT-28 al BOT-71)',
+    esFija: true,
+    color: 'yellow',
+  },
+  {
+    id: 'PMEL',
+    nombre: 'Panelería / Mobiliario / Equipamiento Local',
+    descripcion: 'Equipamiento y productos de bodega PMEL',
+    esFija: false,
+    color: 'emerald',
+  },
+];
+
+export const INITIAL_PRODUCTOS: Producto[] = [
+  // ── ALI (ALIaproductos / Descartables) ──
+  { id: 1, codigo: 'ALI-01', desc: 'Bowl Kraft 500 cc con tapa', familia: 'ALI', tipo: 'Fijo', stock: 120, stockMin: 50, valor: 145, venc: '', estado: 'Activo' },
+  { id: 2, codigo: 'ALI-02', desc: 'Bowl Kraft 750 cc con tapa', familia: 'ALI', tipo: 'Fijo', stock: 150, stockMin: 50, valor: 175, venc: '', estado: 'Activo' },
+  { id: 3, codigo: 'ALI-03', desc: 'Pote Soup Cup 16 oz + Tapa', familia: 'ALI', tipo: 'Fijo', stock: 80, stockMin: 50, valor: 190, venc: '', estado: 'Activo' },
+  { id: 4, codigo: 'ALI-04', desc: 'Pote Soup Cup 12 oz + Tapa', familia: 'ALI', tipo: 'Fijo', stock: 95, stockMin: 50, valor: 160, venc: '', estado: 'Activo' },
+  { id: 5, codigo: 'ALI-05', desc: 'Pote Soup Cup 08 oz + Tapa', familia: 'ALI', tipo: 'Fijo', stock: 110, stockMin: 50, valor: 135, venc: '', estado: 'Activo' },
+  { id: 6, codigo: 'ALI-06', desc: 'Pote Copa Gelatera + Tapa', familia: 'ALI', tipo: 'Fijo', stock: 60, stockMin: 50, valor: 120, venc: '', estado: 'Activo' },
+  { id: 7, codigo: 'ALI-07', desc: 'Pocillo 2 oz con tapa', familia: 'ALI', tipo: 'Fijo', stock: 140, stockMin: 50, valor: 85, venc: '', estado: 'Activo' },
+  { id: 8, codigo: 'ALI-08', desc: 'Cuchara plástica', familia: 'ALI', tipo: 'Fijo', stock: 250, stockMin: 100, valor: 25, venc: '', estado: 'Activo' },
+  { id: 9, codigo: 'ALI-09', desc: 'Tenedor de plástico', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 100, valor: 25, venc: '', estado: 'Activo' },
+  { id: 10, codigo: 'ALI-10', desc: 'Cuchillo de plástico', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 100, valor: 25, venc: '', estado: 'Activo' },
+  { id: 11, codigo: 'ALI-11', desc: 'Palito revolvedor', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 100, valor: 12, venc: '', estado: 'Activo' },
+  { id: 12, codigo: 'ALI-12', desc: 'Film para Alimentos', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 10, valor: 4500, venc: '', estado: 'Activo' },
+  { id: 13, codigo: 'ALI-13', desc: 'Bombilla de papel', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 100, valor: 18, venc: '', estado: 'Activo' },
+  { id: 14, codigo: 'ALI-14', desc: 'Servilletas para cocktail', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 100, valor: 15, venc: '', estado: 'Activo' },
+  { id: 15, codigo: 'ALI-15', desc: 'Rollo prepicado 30x40', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 10, valor: 2200, venc: '', estado: 'Activo' },
+  { id: 16, codigo: 'ALI-16', desc: 'Rollo prepicado 40x60', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 10, valor: 3100, venc: '', estado: 'Activo' },
+  { id: 17, codigo: 'ALI-17', desc: 'Bolsa transparente', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 50, valor: 45, venc: '', estado: 'Activo' },
+  { id: 18, codigo: 'ALI-18', desc: 'Vaso térmico Plumavit + Tapa', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 50, valor: 63, venc: '', estado: 'Activo' },
+  { id: 19, codigo: 'ALI-19', desc: 'Vaso plástico con tapa', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 50, valor: 55, venc: '', estado: 'Activo' },
+  { id: 20, codigo: 'ALI-20', desc: 'Vaso plástico 300 cc + Tapa', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 50, valor: 70, venc: '', estado: 'Activo' },
+  { id: 21, codigo: 'ALI-21', desc: 'Papel mantequilla', familia: 'ALI', tipo: 'Fijo', stock: 0, stockMin: 10, valor: 1800, venc: '', estado: 'Activo' },
+
+  // ── GOB (Gobierno / Kits) ──
+  { id: 22, codigo: 'GOB-22', desc: 'Pack buen dormir (cuna y colchon)', familia: 'GOB', tipo: 'Fijo', stock: 18, stockMin: 5, valor: 165000, venc: '', estado: 'Activo' },
+  { id: 23, codigo: 'GOB-23', desc: 'Pack bienestar apego (caja 1kit)', familia: 'GOB', tipo: 'Fijo', stock: 22, stockMin: 5, valor: 85000, venc: '', estado: 'Activo' },
+
+  // ── EQM (Equipamiento en Tránsito) ──
+  { id: 24, codigo: 'EQM-24', desc: 'SOLUCION DE FORMALDEHIDO 2% 1L', familia: 'EQM', tipo: 'Variable', stock: 60, stockMin: 10, valor: 16258, venc: '', estado: 'Activo' },
+  { id: 25, codigo: 'EQM-25', desc: 'Producto en transito', familia: 'EQM', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 26, codigo: 'EQM-26', desc: 'Producto en transito', familia: 'EQM', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 27, codigo: 'EQM-27', desc: 'Producto en transito', familia: 'EQM', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+
+  // ── BOT (Bodega en Tránsito) ──
+  { id: 28, codigo: 'BOT-28', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 29, codigo: 'BOT-29', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 30, codigo: 'BOT-30', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 31, codigo: 'BOT-31', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 32, codigo: 'BOT-32', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 33, codigo: 'BOT-33', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 34, codigo: 'BOT-34', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 35, codigo: 'BOT-35', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 36, codigo: 'BOT-36', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 37, codigo: 'BOT-37', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 38, codigo: 'BOT-38', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 39, codigo: 'BOT-39', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 40, codigo: 'BOT-40', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 41, codigo: 'BOT-41', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 42, codigo: 'BOT-42', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 43, codigo: 'BOT-43', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 44, codigo: 'BOT-44', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 45, codigo: 'BOT-45', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 46, codigo: 'BOT-46', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 47, codigo: 'BOT-47', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 48, codigo: 'BOT-48', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 49, codigo: 'BOT-49', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 50, codigo: 'BOT-50', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 51, codigo: 'BOT-51', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 52, codigo: 'BOT-52', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 53, codigo: 'BOT-53', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 54, codigo: 'BOT-54', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 55, codigo: 'BOT-55', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 56, codigo: 'BOT-56', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 57, codigo: 'BOT-57', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 58, codigo: 'BOT-58', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 59, codigo: 'BOT-59', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 60, codigo: 'BOT-60', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 61, codigo: 'BOT-61', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 62, codigo: 'BOT-62', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 63, codigo: 'BOT-63', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 64, codigo: 'BOT-64', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 65, codigo: 'BOT-65', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 66, codigo: 'BOT-66', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 67, codigo: 'BOT-67', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 68, codigo: 'BOT-68', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 69, codigo: 'BOT-69', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 70, codigo: 'BOT-70', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  { id: 71, codigo: 'BOT-71', desc: 'Producto en transito', familia: 'BOT', tipo: 'Variable', stock: 0, stockMin: 0, valor: 0, venc: '', estado: 'Activo' },
+  // ── PMEL (Panelería / Mobiliario / Equipamiento Local) ──
+  { id: 72, codigo: 'PMEL-01', desc: 'Panel modular / Mobiliario y Equipamiento Local PMEL', familia: 'PMEL', tipo: 'Variable', stock: 0, stockMin: 10, valor: 15000, venc: '', estado: 'Activo' },
+];
+
+export const INITIAL_KARDEX: KardexMovimiento[] = [
+  {
+    id: 'k_1711620000000_init1',
+    fecha: '28/09/2026, 09:30:15',
+    tipo: 'ENTRADA',
+    codigo: 'ALI-18',
+    producto: 'Vaso térmico Plumavit + Tapa',
+    guia: 'GD-89021',
+    factura: 'FAC-45091',
+    oc: 'OC-2026-00001',
+    unidad: 'Bodega de Tránsito HAH',
+    persona: 'Arturo Gómez E.',
+    cantidad: 7000
+  },
+  {
+    id: 'k_1711623600000_init2',
+    fecha: '28/09/2026, 11:15:40',
+    tipo: 'SALIDA',
+    codigo: 'ALI-18',
+    producto: 'Vaso térmico Plumavit + Tapa',
+    guia: '—',
+    factura: '—',
+    oc: 'SI-00001-2026',
+    unidad: 'Alimentacion ALI',
+    persona: 'Carla Morales P.',
+    cantidad: 7000
+  },
+  {
+    id: 'k_1711627200000_init3',
+    fecha: '28/09/2026, 12:45:00',
+    tipo: 'ENTRADA',
+    codigo: 'EQM-24',
+    producto: 'SOLUCION DE FORMALDEHIDO 2% 1L',
+    guia: 'GD-99120',
+    factura: 'FAC-77821',
+    oc: 'OC-2026-00045',
+    unidad: 'Bodega de Tránsito HAH',
+    persona: 'Arturo Gómez E.',
+    cantidad: 60
+  }
+];
+
+export const INITIAL_ACTAS: ActaSalida[] = [
+  {
+    id: '01',
+    fecha: '28/09/2026',
+    servicio: 'Alimentacion ALI',
+    nroSolicitud: 'SI-00001-2026',
+    responsable: 'Carla Morales P. - 16.892.401-2',
+    nota: 'ENTREGADOS : CORREO , ALIMENTACION',
+    items: [
+      {
+        id: 1,
+        codigo: 'ALI-18',
+        desc: 'Vaso térmico Plumavit + Tapa',
+        familia: 'ALI',
+        cantidad: 7000
+      }
+    ]
+  }
+];
+
+export const HOSPITAL_SERVICIOS = [
+  'Abastecimiento',
+  'Ambulancia',
+  'Anatomía Patológica',
+  'CAE',
+  'CAE Infantil',
+  'CAE Mujer',
+  'Camas Básicas',
+  'Camas Medias',
+  'Contabilidad',
+  'Equipos Médicos',
+  'Esterilización',
+  'Farmacia',
+  'Ginecoobstetricia',
+  'HAH Unidades',
+  'Hospital Día',
+  'Hospitalización',
+  'Imagenología',
+  'Logística',
+  'Mantención',
+  'Maternidad',
+  'Médico Quirúrgico',
+  'Movilización',
+  'Odontología',
+  'OIRS',
+  'Pabellón',
+  'Pabellón Central',
+  'Pediatría',
+  'Personal',
+  'REAS',
+  'Recursos Humanos',
+  'Alimentacion',
+  'Alimentacion ALI',
+  'Servicios Generales',
+  'Textil',
+  'TIC',
+  'UCI',
+  'UCIN',
+  'Urgencia',
+  'Urgencias',
+  'UTI'
+];
